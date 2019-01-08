@@ -15,7 +15,7 @@ The following libraries (which work with this core) have been added as submodule
 5. Accelerometer https://github.com/micooke/Kx022-1020
 6. (work in progress) Si1143 Heartrate sensor https://github.com/micooke/Si1143
 
-###
+### Additions
 I intend to add support for interrupts (Tap/Double Tap) for the KX022 sensor, but do not know the assigned pins yet. (Still need to find that out)
 
 As well as BLE radio example code for testing purposes. 
@@ -30,9 +30,6 @@ To get these libraries without using the board manager:
 git clone https://github.com/RuhanSA079/arduino-nRF5-smartwatches.git
 git submodule update --init --recursive
 ```
-
-### Note
-My ID107HR is a v2.4 and it does not match the pin mapping of the ID100HR. So if you have a ID107HR that is a v2.3 or earlier you will need to use the ID100HR (at this stage).
 
 ### Pin allocation
 
