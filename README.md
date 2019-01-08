@@ -1,12 +1,13 @@
 ## Nordic Semiconductor nRF5 Smartwatches
+Forked from micooke/arduino-nRF5-smartwatches
 
-This work piggy backs on previous work by many people, mainly : [@goran-mahovlic](https://github.com/goran-mahovlic), [@rogerclarkmelbourne](https://github.com/rogerclarkmelbourne/), [@curtpw](https://github.com/curtpw/), [@Gordon](http://forum.espruino.com/profiles/224/)
+This work piggy backs on previous work by many people, mainly : [@goran-mahovlic](https://github.com/goran-mahovlic), [@rogerclarkmelbourne](https://github.com/rogerclarkmelbourne/), [@curtpw](https://github.com/curtpw/), [@Gordon](http://forum.espruino.com/profiles/224/) and [@micooke](https://github.com/micooke).
 
 Most of these watches are made by [idoosmart](http://www.idoosmart.com) and can be purchased from their [aliexpress](https://ido-smart.en.alibaba.com/productgrouplist-0/Ungrouped.html?) company site.
 
 Be careful when purchasing from a third party reseller as there have been instances where the received watch does not contain a nRF5 chip, or you purchase a ID107HR Plus and receive a ID107HR instead.
 
-Note : I have no affiliation with idoosmart / Shenzhen DO Intelligent Technology Co,. Ltd, nor any aliexpress or smartwatch retailer.
+NOTE: We have no affiliation with idoosmart / Shenzhen DO Intelligent Technology Co,. Ltd, nor any aliexpress or smartwatch retailer.
 
 Included smartwatches:
 1. [IDO003](https://github.com/micooke/micooke.github.io/blob/master/arduino-nRF5-smartwatches/images/IDO003_back.jpg)
@@ -19,7 +20,8 @@ Included Generic development boards:
 6. [Taida Century nRF52 mini board / nRF52832 Gold Core](https://github.com/micooke/micooke.github.io/blob/master/nRF52832_TaidaCentury_GoldCore.md)
 7. [Waveshare BLE400](https://www.waveshare.com/wiki/BLE400)
 
-I am happy to accept pull requests for any nRF51 or nRF52 based smartwatch, but will be unable to test anything except for the ID107HR (v2.4) and T28 unless you are feeling generous and want to send me one :wink:.
+I only have the ID107HR v2.4 to test with, but the button and capacitive button is dead, AFAIK.
+If you have any additional PR that may work, I will review the PR's, but I prefer that you send the PR's to micooke/arduino-nRF5-smartwatches, as this is repo just a fork (a improvement on the KX022 code libs)
 
 ### Libraries
 The following libraries (which work with this core) have been added as submodules:
@@ -30,13 +32,19 @@ The following libraries (which work with this core) have been added as submodule
 5. Accelerometer https://github.com/micooke/Kx022-1020
 6. (work in progress) Si1143 Heartrate sensor https://github.com/micooke/Si1143
 
-#### I recommend using the u8g2 library over any of my OLED libraries!
+###
+I intend to add support for interrupts (Tap/Double Tap) for the KX022 sensor, but do not know the assigned pins yet. (Still need to find that out)
 
-My Squix78 based OLED [library](https://github.com/micooke/squix78_OLED) also works.
+As well as BLE radio example code for testing purposes. 
+
+
+#### I recommend using the u8g2 library over any of MiCooke's OLED libraries!
+
+MiCooke's Squix78 based OLED [library](https://github.com/micooke/squix78_OLED) also works.
 
 To get these libraries without using the board manager:
 ```
-git clone https://github.com/micooke/arduino-nRF5-smartwatches.git
+git clone https://github.com/RuhanSA079/arduino-nRF5-smartwatches.git
 git submodule update --init --recursive
 ```
 
