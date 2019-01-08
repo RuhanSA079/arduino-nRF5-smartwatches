@@ -1,27 +1,10 @@
 ## Nordic Semiconductor nRF5 Smartwatches
-Forked from micooke/arduino-nRF5-smartwatches
+Forked from micooke/arduino-nRF5-smartwatches --> Thank you, micooke and all the others who have contributed, for your help and development time on this project.
 
-This work piggy backs on previous work by many people, mainly : [@goran-mahovlic](https://github.com/goran-mahovlic), [@rogerclarkmelbourne](https://github.com/rogerclarkmelbourne/), [@curtpw](https://github.com/curtpw/), [@Gordon](http://forum.espruino.com/profiles/224/) and [@micooke](https://github.com/micooke).
-
-Most of these watches are made by [idoosmart](http://www.idoosmart.com) and can be purchased from their [aliexpress](https://ido-smart.en.alibaba.com/productgrouplist-0/Ungrouped.html?) company site.
-
-Be careful when purchasing from a third party reseller as there have been instances where the received watch does not contain a nRF5 chip, or you purchase a ID107HR Plus and receive a ID107HR instead.
-
-NOTE: We have no affiliation with idoosmart / Shenzhen DO Intelligent Technology Co,. Ltd, nor any aliexpress or smartwatch retailer.
-
-Included smartwatches:
-1. [IDO003](https://github.com/micooke/micooke.github.io/blob/master/arduino-nRF5-smartwatches/images/IDO003_back.jpg)
-2. [ID100HR](https://github.com/micooke/micooke.github.io/blob/master/arduino-nRF5-smartwatches/images/ID100HR_back.jpg)
-3. [ID107HR](https://github.com/micooke/micooke.github.io/blob/master/arduino-nRF5-smartwatches/images/ID107HR_back.jpg)
-4. [ID107HR Plus](https://github.com/micooke/micooke.github.io/blob/master/arduino-nRF5-smartwatches/images/ID107HRPlus_disected.jpg) (alpha) - dont expect this to work
-5. [LEMDOIE T28](https://github.com/micooke/micooke.github.io/blob/master/nRF52832_Lemdoie_T28.md)
-
-Included Generic development boards:
-6. [Taida Century nRF52 mini board / nRF52832 Gold Core](https://github.com/micooke/micooke.github.io/blob/master/nRF52832_TaidaCentury_GoldCore.md)
-7. [Waveshare BLE400](https://www.waveshare.com/wiki/BLE400)
+Please refer to micooke's README for more information.
 
 I only have the ID107HR v2.4 to test with, but the button and capacitive button is dead, AFAIK.
-If you have any additional PR that may work, I will review the PR's, but I prefer that you send the PR's to micooke/arduino-nRF5-smartwatches, as this is repo just a fork (a improvement on the KX022 code libs)
+If you have any additional PR that may work, I will review the PR's, but I prefer that you send the PR's to micooke/arduino-nRF5-smartwatches, as this is repo just a fork (a planned improvement on the KX022 code libs)
 
 ### Libraries
 The following libraries (which work with this core) have been added as submodules:
@@ -38,9 +21,9 @@ I intend to add support for interrupts (Tap/Double Tap) for the KX022 sensor, bu
 As well as BLE radio example code for testing purposes. 
 
 
-#### I recommend using the u8g2 library over any of MiCooke's OLED libraries!
+#### I recommend using the u8g2 library over any of micooke's OLED libraries!
 
-MiCooke's Squix78 based OLED [library](https://github.com/micooke/squix78_OLED) also works.
+micooke's Squix78 based OLED [library](https://github.com/micooke/squix78_OLED) also works.
 
 To get these libraries without using the board manager:
 ```
@@ -49,33 +32,7 @@ git submodule update --init --recursive
 ```
 
 ### Note
-Im not sure about the ID100HR variant. The pin mapping has been taken from posts about the ID100HR, as well as posts on the ID107HR which appeared to have the same pin mapping.
-
 My ID107HR is a v2.4 and it does not match the pin mapping of the ID100HR. So if you have a ID107HR that is a v2.3 or earlier you will need to use the ID100HR (at this stage).
-
-### Programming
-These watches can be programmed by soldering directly to the SWDIO, SWCLK and GND pins.
-You can also connect to the TX and RX pins for debugging.
-
-The T28 and ID107HR Plus do not label these pads by silkscreen so please see [ID107HR Plus pads](images/ID107HRPlus_pads.jpg), ![T28 Front1](nRF52832_Lemdoie_T28/T28_Front1.jpg), ![T28 Front2](nRF52832_Lemdoie_T28/T28_Front2.jpg) for these pins.
-
-The ID107HR+ UART Tx,Rx were chosen to be on p23,p24 because the pads are next to the programming pins.
-
-The T28 UART Tx,Rx were chosen to be on p26,p25 as their pads are near the OLED ribbon.
-
-Progamming is via a SWD programmer (J-Link, ST-Link etc.) using sandeep's core.
-
-### Installing via Board Manager
-1. [Download and install the Arduino IDE](https://www.arduino.cc/en/Main/Software) (At least v1.6.12)
-2. Start the Arduino IDE
-3. Go into Preferences
-4. Install the board package(s)
-    4.1 (If you havent already done so) Install @sandeepmistry's nRF5 core [arduino-nRF5](https://github.com/sandeepmistry/arduino-nRF5)
-    4.2 Add ```https://sandeepmistry.github.io/arduino-nRF5/package_nRF5_boards_index.json``` as an "Additional Board Manager URL"
-    4.3 Install [arduino-nRF5-smartwatches](https://github.com/micooke/arduino-nRF5-smartwatches)
-    4.4 Add ```https://micooke.github.io/package_nRF5_smartwatches_index.json``` as an "Additional Board Manager URL"
-5. Open the Boards Manager from the Tools -> Board menu and install "Nordic Semiconductor nRF5 Smartwatches"
-6. Select your nRF5 smartwatch from the Tools -> Board menu
 
 ### Pin allocation
 
@@ -122,6 +79,7 @@ The nRF52 based T28 is quite different. Its pin allocation table is located [her
 3. 0x76 : Altitude / Pressure / Temperature (HP203B)
 
 ### References
+* micooke's original code (forked from)
 * nRF5 core is written and maintained by Sandeep Mistry
 * Support for these smartwatches originate from Roger's [arduino-nRF5-customised](https://github.com/rogerclarkmelbourne/arduino-nRF5-customised) repo
 * [ID100HR picture](http://www.rogerclark.net/wp-content/uploads/2016/09/ID100HR_back_smart_watch-1024x576.jpg) is from Roger, embedded on his website [article](http://www.rogerclark.net/arduino-on-the-id100hr-fitness-tracker/)
